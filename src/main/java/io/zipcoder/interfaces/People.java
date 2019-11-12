@@ -1,12 +1,9 @@
 package io.zipcoder.interfaces;
 
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.List;
-import java.util.ListIterator;
+import java.util.*;
 
 public class People implements Iterable{
-  List<Person> personList;
+  List<Person> personList = new ArrayList<>();
 
   public void add (Person person){
     personList.add(person);
