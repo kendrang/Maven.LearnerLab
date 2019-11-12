@@ -18,4 +18,11 @@ public class TestPerson {
 
     }
 
+    @Test
+    public void testSetName() {
+        Person setPerson = new Person (1,null);
+        setPerson.setName("Frodo");
+        Assert.assertEquals("Frodo", setPerson.getName());
+    }
+
 }
