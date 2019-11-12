@@ -5,7 +5,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class People implements Iterable <> {
+public class People implements Iterable{
   List<Person> personList;
 
   public void add (Person person){
