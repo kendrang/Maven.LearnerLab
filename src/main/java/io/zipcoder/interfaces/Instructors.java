@@ -5,9 +5,9 @@ public class Instructors extends People<Instructor> {
 
     protected Instructors() {
         super();
-        super.add(new Instructor(1, "Dolio"));
-        super.add(new Instructor(2, "Froilan"));
-        super.add(new Instructor(3, "Roberto"));
+        super.add(Educator.DOLIO.getInstructor());
+        super.add(Educator.FROILAN.getInstructor());
+        super.add(Educator.ROBERTO.getInstructor());
     }
 
     public static Instructors getInstance(){

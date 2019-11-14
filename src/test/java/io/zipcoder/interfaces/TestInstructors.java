@@ -6,7 +6,7 @@ import org.junit.Test;
 public class TestInstructors {
     @Test
     public void testSingleton() {
-        Instructors instructorsSingle = new Instructors();
+        Instructors instructorsSingle = Instructors.getInstance();
         Person imhere = instructorsSingle.findById(1);
         Assert.assertEquals("Dolio", imhere.getName());
         Person imheretoo = instructorsSingle.findById(2);

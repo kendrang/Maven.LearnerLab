@@ -4,11 +4,13 @@ public enum Educator implements Teacher{
 
    DOLIO(1, "Dolio"), FROILAN(2,"Froilan"), ROBERTO(3, "Roberto");
 
-    final Instructor instructor;
-    double timeWorked= 0;
+
+
+    final private Instructor instructor;
+    private double timeWorked= 0;
 
     Educator(int i, String name) {
-        instructor = new Instructor(i, "");
+        instructor = new Instructor(i, name);
     };
 
 
@@ -25,5 +27,11 @@ public enum Educator implements Teacher{
         timeWorked += numberOfHours;
     }
 
+    public Instructor getInstructor() {
+        return instructor;
+    }
 
+    public double getTimeWorked() {
+        return timeWorked;
+    }
 }
