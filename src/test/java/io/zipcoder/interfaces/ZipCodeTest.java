@@ -10,9 +10,9 @@ public class ZipCodeTest {
     public void testHostLecture(){
         ZipCodeWilmington zipcode = ZipCodeWilmington.getInstance();
         zipcode.hostLecture(1,30);
-        HashMap <Student, Double > map = zipcode.getStudyMap();
-        for (Student s: map.keySet()){
-            Assert.assertEquals(10, s.getTotalStudyTime(), .00);
+        HashMap <Student, Double > zipmap = zipcode.getStudyMap();
+        for (Student s: zipmap.keySet()){
+            Assert.assertEquals(10, s.getTotalStudyTime(), .0001);
         }
 
     }

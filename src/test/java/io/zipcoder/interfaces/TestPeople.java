@@ -1,40 +1,37 @@
 package io.zipcoder.interfaces;
 
+import org.junit.After;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class TestPeople {
-
-    @Test
-    public void testAdd (){
-        People peoples = new People();
-        Person person1 = new Person(1, "Marble");
-        Person person2 = new Person(2, "Kermit");
-        Person person3 = new Person(3, "Peach");
-        peoples.add(person1);
-        peoples.add(person2);
-        peoples.add(person3);
-        Assert.assertTrue(peoples.contains(person1));
-        Assert.assertTrue(peoples.contains(person2));
-        Assert.assertTrue(peoples.contains(person3));
+    Person person;
+    List<Person> personList;
+    @Before
+    public void setUp() throws Exception {
+        person = new Person(2, "Josie");
+        personList = new ArrayList<Person>();
     }
-
-    @Test
-    public void testRemove(){
-        People peoples1 = new People();
-        Person person1 = new Person(1, "Bob");
-        peoples1.add(person1);
-        peoples1.remove(person1);
-        Assert.assertFalse(peoples1.contains(person1));
-
+    @After
+    public void tearDown() throws Exception {
     }
-
     @Test
-    public void testFindByID(){
-        People peoples2 = new People();
-        Person person1 = new Person(2, "Cheeseburger");
-        peoples2.add(person1);
-        Person actual = peoples2.findById(2);
-        Assert.assertEquals(person1, actual);
+    public void add() {
+        personList.add(person);
+        Assert.assertTrue(personList.contains(person));
+    }
+    @Test
+    public void findById() {
+        person.getId();
+        Assert.assertEquals(2, person.getId());
+    }
+    @Test
+    public void remove() {
+        personList.remove(person);
+        Assert.assertFalse(personList.contains(2));
     }
 }

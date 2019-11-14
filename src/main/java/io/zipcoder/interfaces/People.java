@@ -2,27 +2,27 @@ package io.zipcoder.interfaces;
 
 import java.util.*;
 
-public class People implements Iterable<Person>{
-  List<Person> personList = new ArrayList<>();
+public abstract class People <E extends Person> implements Iterable<E>{
+  List<E> personList = new ArrayList<>();
 
-  public void add (Person person){
+  public void add (E person){
     personList.add(person);
   }
-  public Person findById(long id){
-    for (Person p : personList){
+  public E findById(long id){
+    for (E p : personList){
       if(p.getId() ==id){
         return p;
       }
     }return null;
   }
 
-  public boolean contains (Person person){
+  public boolean contains (E person){
     if (personList.contains(person)){
       return true;
     }return false;
   }
 
-  public void remove (Person person){
+  public void remove (E person){
     personList.remove(person);
 
   }
@@ -39,13 +39,10 @@ public class People implements Iterable<Person>{
    return personList.size();
   }
 
-  public Person[] toArray (){
-    Person[] arr = new Person[personList.size()];
-   return personList.toArray(arr);
-  }
+  abstract E[] toArray ();
 
   @Override
-  public Iterator<Person> iterator() {
+  public Iterator<E> iterator() {
     return personList.iterator();
   }
 }
